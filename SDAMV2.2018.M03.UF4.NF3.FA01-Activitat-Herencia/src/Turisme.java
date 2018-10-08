@@ -17,11 +17,14 @@ public class Turisme extends Vehicle{
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		RemCar = remCar;
 	}
+	//Getters Setters
+	public boolean isRemCar() {
+		return RemCar;
+	}
 
-
-	
-	
-	
+	public void setRemCar(boolean remCar) {
+		RemCar = remCar;
+	}
 	
 	
 }

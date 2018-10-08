@@ -23,5 +23,24 @@ public class Mercaderies extends Vehicle{
 		this.alçada = alçada;
 		this.tipusMercaderia = tipusMercaderia;
 	}
+	//Getters Setters
+	public int getNumEixos() {
+		return numEixos;
+	}
+	public void setNumEixos(int numEixos) {
+		this.numEixos = numEixos;
+	}
+	public int getAlçada() {
+		return alçada;
+	}
+	public void setAlçada(int alçada) {
+		this.alçada = alçada;
+	}
+	public String getTipusMercaderia() {
+		return tipusMercaderia;
+	}
+	public void setTipusMercaderia(String tipusMercaderia) {
+		this.tipusMercaderia = tipusMercaderia;
+	}
 
 }

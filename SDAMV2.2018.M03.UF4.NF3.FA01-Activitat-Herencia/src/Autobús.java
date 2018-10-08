@@ -20,5 +20,21 @@ public class Autobús extends Vehicle{
 		this.numEixos = numEixos;
 		this.alçada = alçada;
 	}
+	//Getters Setters
+	public int getNumEixos() {
+		return numEixos;
+	}
+
+	public void setNumEixos(int numEixos) {
+		this.numEixos = numEixos;
+	}
+
+	public int getAlçada() {
+		return alçada;
+	}
+
+	public void setAlçada(int alçada) {
+		this.alçada = alçada;
+	}
 	
 }

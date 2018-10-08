@@ -15,6 +15,6 @@ public class Motocicletes extends Vehicle{
 		// TODO Auto-generated constructor stub
 	}
 	
-	//asd
+	
 
 }

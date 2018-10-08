@@ -20,6 +20,14 @@ public class MercaderiesPerilloses extends Mercaderies{
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal, numEixos, alçada, tipusMercaderia);
 		this.nivellPerillositat = nivellPerillositat;
 	}
+	//Getters Setters
+	public int getNivellPerillositat() {
+		return nivellPerillositat;
+	}
+
+	public void setNivellPerillositat(int nivellPerillositat) {
+		this.nivellPerillositat = nivellPerillositat;
+	}
 
 
 }
