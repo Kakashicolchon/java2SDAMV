@@ -36,5 +36,7 @@ public class Autobús extends Vehicle{
 	public void setAlçada(int alçada) {
 		this.alçada = alçada;
 	}
+	//Mètodes
+	
 	
 }

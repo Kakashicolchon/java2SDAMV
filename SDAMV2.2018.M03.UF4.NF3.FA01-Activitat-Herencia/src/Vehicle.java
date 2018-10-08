@@ -67,7 +67,20 @@ public class Vehicle {
 		this.pesTotal = pesTotal;
 	}
     
-	// que tal
+	// Mètodes.
+	
+	
+	public static void calcularPreuBitllet() {
+		 System.out.println("calcular PBEV × Slots");
+		 //Calcul PBEV × Slots
+		 }
+
+	
+	
+	
+	
+	
+	
 	
 
 }
