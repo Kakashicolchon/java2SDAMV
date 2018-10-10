@@ -12,7 +12,7 @@ public class Turisme extends Vehicle{
 	 * @param pesTotal
 	 * @param remCar
 	 */
-	public Turisme(String marca, String model, String matricula, String nombreOcupants, String slots, String pesTotal,
+	public Turisme(String marca, String model, String matricula, String nombreOcupants, int slots, String pesTotal,
 			boolean remCar) {
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		RemCar = remCar;

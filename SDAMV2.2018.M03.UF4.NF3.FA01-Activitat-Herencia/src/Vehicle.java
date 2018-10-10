@@ -1,5 +1,19 @@
 
 public class Vehicle {
+
+	//Classe principal d'on ...
+	//Atributs
+	private String marca;//Atribut que indica la marca del vehicle
+	private String model;//Atribut que indica el model del vehicle
+	private String matricula;//Atribut que indica la matrícula del vehicle
+	private String nombreOcupants;//Atribut que indica el nombre d'ocupants del vehicle
+	private int slots;//Atribut que indica la capacitat del vehicle
+	private String pesTotal;//Atribut que indica el pes total del vehicle amb la càrrega inclosa si s'escau
+	public final float PBEV = 25.0f;//Atribut que indica el preu base per l'espai del vehícle.
+	public final float PBOV = 7.0f;
+	public final float PBTV = 10.0f;
+	public final float PBMP = 35.0f;
+
 	/**
 	 * Constructor per defecte amb paràmetres
 	 * @param marca
@@ -9,7 +23,7 @@ public class Vehicle {
 	 * @param slots
 	 * @param pesTotal
 	 */
-	public Vehicle(String marca, String model, String matricula, String nombreOcupants, String slots,
+	public Vehicle(String marca, String model, String matricula, String nombreOcupants, int slots,
 			String pesTotal) {
 		super();
 		this.marca = marca;
@@ -19,18 +33,11 @@ public class Vehicle {
 		this.slots = slots;
 		this.pesTotal = pesTotal;
 	}
-	
-	//Classe principal d'on ...
-	//Atributs
-	private String marca;//Atribut que indica la marca del vehicle
-    private String model;//Atribut que indica el model del vehicle
-    private String matricula;//Atribut que indica la matrícula del vehicle
-    private String nombreOcupants;//Atribut que indica el nombre d'ocupants del vehicle
-    private String slots;//Atribut que indica la capacitat del vehicle
-    private String pesTotal;//Atribut que indica el pes total del vehicle amb la càrrega inclosa si s'escau
-	
-    //Setters Getters
-    public String getMarca() {
+	/**
+	 * @param pBEV
+	 */
+	//Setters Getters
+	public String getMarca() {
 		return marca;
 	}
 	public void setMarca(String marca) {
@@ -54,10 +61,10 @@ public class Vehicle {
 	public void setNombreOcupants(String nombreOcupants) {
 		this.nombreOcupants = nombreOcupants;
 	}
-	public String getSlots() {
+	public int getSlots() {
 		return slots;
 	}
-	public void setSlots(String slots) {
+	public void setSlots(int slots) {
 		this.slots = slots;
 	}
 	public String getPesTotal() {
@@ -66,21 +73,23 @@ public class Vehicle {
 	public void setPesTotal(String pesTotal) {
 		this.pesTotal = pesTotal;
 	}
-    
-	// Mètodes.
-	
-	
-	public static void calcularPreuBitllet() {
-		 System.out.println("calcular PBEV × Slots");
-		 //Calcul PBEV × Slots
-		 }
 
-	
-	
-	
-	
-	
-	
-	
+	// Mètodes.
+
+
+	public static float calcularPreuBitllet(float PBEV, int slots) {
+		System.out.println("calcular PBEV × Slots");
+		return PBEV * slots;
+	}
+	float a = calcularPreuBitllet(123123, 2);
+
+
+
+
+
+
+
+
+
 
 }
