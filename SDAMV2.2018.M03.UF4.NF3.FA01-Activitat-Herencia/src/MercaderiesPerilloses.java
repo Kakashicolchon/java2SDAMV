@@ -28,10 +28,12 @@ public class MercaderiesPerilloses extends Mercaderies{
 	public void setNivellPerillositat(int nivellPerillositat) {
 		this.nivellPerillositat = nivellPerillositat;
 	}
-	public float suputa() {
-		// TODO Auto-generated method stub
-		float a = PBOV +100;
-		return a;
+	//Mètodes
+	@Override
+	public float calcularPreuBitllet() {
+		System.out.println("Mercaderies Perilloses: ");
+		float resultat = (PBEV * getSlots()) + (PBTV * getPesTotal()) + (PBMP * getNivellPerillositat());
+		return resultat;
 	}
 
 

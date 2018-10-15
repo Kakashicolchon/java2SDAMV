@@ -78,7 +78,7 @@ public class Vehicle {
 
 
 	public float calcularPreuBitllet() {
-		System.out.println("calcular PBEV × Slots");
+		System.out.println("Vehicle: ");
 		return PBEV * slots;
 	}
 	//float a = calcularPreuBitllet(123123, 2);

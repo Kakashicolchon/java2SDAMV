@@ -26,8 +26,9 @@ public class Turisme extends Vehicle{
 		RemCar = remCar;
 	}
 	// Mètodes
+	@Override
 	public float calcularPreuBitllet() {
-		System.out.println("calcular PBEV × Slots + PBOV x NOcupants");
+		System.out.println("Turisme: ");
 		float resultat = (PBEV * getSlots()) + (PBOV * getNombreOcupants());
 		return resultat;
 	}

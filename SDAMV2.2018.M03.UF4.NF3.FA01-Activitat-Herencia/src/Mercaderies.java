@@ -42,5 +42,12 @@ public class Mercaderies extends Vehicle{
 	public void setTipusMercaderia(String tipusMercaderia) {
 		this.tipusMercaderia = tipusMercaderia;
 	}
+	//Mètodes
+	@Override
+	public float calcularPreuBitllet() {
+		System.out.println("Mercaderies: ");
+		float resultat = (PBEV * getSlots()) + (PBTV * getPesTotal());
+		return resultat;
+	}
 
 }

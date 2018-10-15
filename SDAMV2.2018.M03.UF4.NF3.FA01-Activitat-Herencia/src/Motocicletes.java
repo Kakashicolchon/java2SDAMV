@@ -14,7 +14,12 @@ public class Motocicletes extends Vehicle{
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		// TODO Auto-generated constructor stub
 	}
-	
+	//Mètodes
+	@Override
+	public float calcularPreuBitllet() {
+		System.out.println("Motocicleta: ");
+		return PBEV * getSlots();
+	}
 	
 
 }

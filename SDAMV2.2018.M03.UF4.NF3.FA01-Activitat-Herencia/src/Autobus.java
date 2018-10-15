@@ -1,5 +1,5 @@
 
-public class Autobús extends Vehicle{
+public class Autobus extends Vehicle{
 	// Atributs amb el nombre d'eixos i l'alçada.
 	int numEixos;
 	int alçada;
@@ -14,7 +14,7 @@ public class Autobús extends Vehicle{
 	 * @param numEixos
 	 * @param alçada
 	 */
-	private Autobús(String marca, String model, String matricula, int nombreOcupants, int slots, float pesTotal,
+	public Autobus(String marca, String model, String matricula, int nombreOcupants, int slots, float pesTotal,
 			int numEixos, int alçada) {
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		this.numEixos = numEixos;
@@ -37,6 +37,11 @@ public class Autobús extends Vehicle{
 		this.alçada = alçada;
 	}
 	//Mètodes
-	
+	@Override
+	public float calcularPreuBitllet() {
+		System.out.println("Autobús: ");
+		float resultat = (PBEV * getSlots()) + (PBOV * getNombreOcupants()) + (PBTV * getPesTotal());
+		return resultat;
+	}
 	
 }
