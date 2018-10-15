@@ -26,10 +26,12 @@ public class ProvaTryCatch {
 			}
 			catch (InputMismatchException ime) {
 				System.out.println("T'has equivocat. L'edat ha de ser un nombre enter.");
+				//Este next line es para capturar el intro(la tecla enter)
 				s.nextLine();
 			}
 			catch(Throwable t) {
 				System.out.println("S'ha produït un erro inesperat. Torna-ho a provar.");
+				//Este next line es para capturar el intro(la tecla enter)
 				s.nextLine();
 			}
 		}
