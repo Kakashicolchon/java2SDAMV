@@ -6,9 +6,9 @@ public class Vehicle {
 	private String marca;//Atribut que indica la marca del vehicle
 	private String model;//Atribut que indica el model del vehicle
 	private String matricula;//Atribut que indica la matrícula del vehicle
-	private String nombreOcupants;//Atribut que indica el nombre d'ocupants del vehicle
+	private int nombreOcupants;//Atribut que indica el nombre d'ocupants del vehicle
 	private int slots;//Atribut que indica la capacitat del vehicle
-	private String pesTotal;//Atribut que indica el pes total del vehicle amb la càrrega inclosa si s'escau
+	private float pesTotal;//Atribut que indica el pes total del vehicle amb la càrrega inclosa si s'escau
 	public final float PBEV = 25.0f;//Atribut que indica el preu base per l'espai del vehícle.
 	public final float PBOV = 7.0f;
 	public final float PBTV = 10.0f;
@@ -23,8 +23,8 @@ public class Vehicle {
 	 * @param slots
 	 * @param pesTotal
 	 */
-	public Vehicle(String marca, String model, String matricula, String nombreOcupants, int slots,
-			String pesTotal) {
+	public Vehicle(String marca, String model, String matricula, int nombreOcupants, int slots,
+			float pesTotal) {
 		super();
 		this.marca = marca;
 		this.model = model;
@@ -55,10 +55,10 @@ public class Vehicle {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	public String getNombreOcupants() {
+	public int getNombreOcupants() {
 		return nombreOcupants;
 	}
-	public void setNombreOcupants(String nombreOcupants) {
+	public void setNombreOcupants(int nombreOcupants) {
 		this.nombreOcupants = nombreOcupants;
 	}
 	public int getSlots() {
@@ -67,21 +67,21 @@ public class Vehicle {
 	public void setSlots(int slots) {
 		this.slots = slots;
 	}
-	public String getPesTotal() {
+	public float getPesTotal() {
 		return pesTotal;
 	}
-	public void setPesTotal(String pesTotal) {
+	public void setPesTotal(float pesTotal) {
 		this.pesTotal = pesTotal;
 	}
 
 	// Mètodes.
 
 
-	public static float calcularPreuBitllet(float PBEV, int slots) {
+	public float calcularPreuBitllet() {
 		System.out.println("calcular PBEV × Slots");
 		return PBEV * slots;
 	}
-	float a = calcularPreuBitllet(123123, 2);
+	//float a = calcularPreuBitllet(123123, 2);
 
 
 

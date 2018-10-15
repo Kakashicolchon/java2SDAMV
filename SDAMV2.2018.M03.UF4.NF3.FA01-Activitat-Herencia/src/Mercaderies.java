@@ -16,8 +16,8 @@ public class Mercaderies extends Vehicle{
 	 */
 	
 	
-	public Mercaderies(String marca, String model, String matricula, String nombreOcupants, int slots,
-			String pesTotal, int numEixos, int alçada, String tipusMercaderia) {
+	public Mercaderies(String marca, String model, String matricula, int nombreOcupants, int slots,
+			float pesTotal, int numEixos, int alçada, String tipusMercaderia) {
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		this.numEixos = numEixos;
 		this.alçada = alçada;

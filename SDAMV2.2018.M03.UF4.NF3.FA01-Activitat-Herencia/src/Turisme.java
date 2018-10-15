@@ -12,7 +12,7 @@ public class Turisme extends Vehicle{
 	 * @param pesTotal
 	 * @param remCar
 	 */
-	public Turisme(String marca, String model, String matricula, String nombreOcupants, int slots, String pesTotal,
+	public Turisme(String marca, String model, String matricula, int nombreOcupants, int slots, float pesTotal,
 			boolean remCar) {
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		RemCar = remCar;
@@ -25,6 +25,11 @@ public class Turisme extends Vehicle{
 	public void setRemCar(boolean remCar) {
 		RemCar = remCar;
 	}
-	
+	// Mètodes
+	public float calcularPreuBitllet() {
+		System.out.println("calcular PBEV × Slots + PBOV x NOcupants");
+		float resultat = (PBEV * getSlots()) + (PBOV * getNombreOcupants());
+		return resultat;
+	}
 	
 }

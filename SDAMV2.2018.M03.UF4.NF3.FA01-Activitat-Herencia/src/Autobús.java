@@ -14,7 +14,7 @@ public class Autobús extends Vehicle{
 	 * @param numEixos
 	 * @param alçada
 	 */
-	private Autobús(String marca, String model, String matricula, String nombreOcupants, int slots, String pesTotal,
+	private Autobús(String marca, String model, String matricula, int nombreOcupants, int slots, float pesTotal,
 			int numEixos, int alçada) {
 		super(marca, model, matricula, nombreOcupants, slots, pesTotal);
 		this.numEixos = numEixos;
