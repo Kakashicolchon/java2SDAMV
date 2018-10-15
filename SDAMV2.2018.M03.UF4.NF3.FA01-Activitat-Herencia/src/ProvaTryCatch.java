@@ -28,6 +28,10 @@ public class ProvaTryCatch {
 				System.out.println("T'has equivocat. L'edat ha de ser un nombre enter.");
 				s.nextLine();
 			}
+			catch(Throwable t) {
+				System.out.println("S'ha produït un erro inesperat. Torna-ho a provar.");
+				s.nextLine();
+			}
 		}
 
 		s.close();
