@@ -1,4 +1,4 @@
-
+import java.util.Vector;
 
 public class PrincipalMain {
 
@@ -34,13 +34,27 @@ public class PrincipalMain {
 		mercaderies = new Mercaderies("Nissan", "Ebro -L-35", "1523 JTJ", 2, 2, 1.5f, 1, 3, "Legos");
 		mercaderiesPerilloses = new MercaderiesPerilloses("Ford", "asdasd", "asdasd", 1, 12, 54, 2, 2, "tipusMercaderia", 2);
 		motocicletes = new Motocicletes ("Ducati", "Panigale V4S", "1523 JTJ", 1, 1, 0.175f);
-		
+		System.out.println("Preus per tipus de vehicle: ");
+		System.out.println("---------------------------");
 		System.out.println(turisme.calcularPreuBitllet() + " €");
 		System.out.println(autobus.calcularPreuBitllet() + " €");
 		System.out.println(mercaderies.calcularPreuBitllet() + " €");
 		System.out.println(mercaderiesPerilloses.calcularPreuBitllet() + " €");
 		System.out.println(motocicletes.calcularPreuBitllet() + " €");
 		
+		//Vector
+		Vector vector=new Vector();
+		vector.addElement(turisme);
+		vector.addElement(autobus);
+		vector.addElement(mercaderies);
+		vector.addElement(mercaderiesPerilloses);
+		vector.addElement(motocicletes);
+		System.out.println("");
+		System.out.println("Característiques: ");
+		System.out.println("-----------------");
+		System.out.println("");
+		//String linia = System.out.println(vector);
+		System.out.println(vector);
 	}
 
 }

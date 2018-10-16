@@ -35,6 +35,14 @@ public class MercaderiesPerilloses extends Mercaderies{
 		float resultat = (PBEV * getSlots()) + (PBTV * getPesTotal()) + (PBMP * getNivellPerillositat());
 		return resultat;
 	}
+	//ToString
+	@Override
+	public String toString() {
+		return "MercaderiesPerilloses]\nnivellPerillositat = " + nivellPerillositat + ", numEixos = " + numEixos
+				+ ", alçada = " + alçada + ", tipusMercaderia = " + tipusMercaderia + ", PBEV = " + PBEV + ", PBOV = " + PBOV
+				+ ", PBTV = " + PBTV + ", PBMP = " + PBMP + "\n";
+	}
+	
 
 
 }

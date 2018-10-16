@@ -37,11 +37,18 @@ public class Autobus extends Vehicle{
 		this.alçada = alçada;
 	}
 	//Mètodes
-	@Override
+	@Override	
 	public float calcularPreuBitllet() {
 		System.out.println("Autobús: ");
 		float resultat = (PBEV * getSlots()) + (PBOV * getNombreOcupants()) + (PBTV * getPesTotal());
 		return resultat;
 	}
+	//ToString
+	@Override
+	public String toString() {
+		return "Autobus\nnumEixos = " + numEixos + ", alçada = " + alçada + ", PBEV = " + PBEV + ", PBOV = " + PBOV + ", PBTV = "
+				+ PBTV + ", PBMP = " + PBMP + "\n";
+	}
+	
 	
 }

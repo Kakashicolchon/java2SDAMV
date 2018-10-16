@@ -32,5 +32,11 @@ public class Turisme extends Vehicle{
 		float resultat = (PBEV * getSlots()) + (PBOV * getNombreOcupants());
 		return resultat;
 	}
+	//ToString
+	@Override
+	public String toString() {
+		return "Turisme\nRemCar = " + RemCar + ", PBEV = " + PBEV + ", PBOV = " + PBOV + ", PBTV = " + PBTV + ", PBMP = " + PBMP
+				+ "\n";
+	}
 	
 }

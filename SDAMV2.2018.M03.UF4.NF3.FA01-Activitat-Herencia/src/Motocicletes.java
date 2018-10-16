@@ -20,6 +20,11 @@ public class Motocicletes extends Vehicle{
 		System.out.println("Motocicleta: ");
 		return PBEV * getSlots();
 	}
+	//ToString
+	@Override
+	public String toString() {
+		return "Motocicletes\nPBEV = " + PBEV + ", PBOV = " + PBOV + ", PBTV = " + PBTV + ", PBMP = " + PBMP + "\n";
+	}
 	
 
 }

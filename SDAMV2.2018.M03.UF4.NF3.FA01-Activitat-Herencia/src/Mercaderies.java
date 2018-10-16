@@ -49,5 +49,12 @@ public class Mercaderies extends Vehicle{
 		float resultat = (PBEV * getSlots()) + (PBTV * getPesTotal());
 		return resultat;
 	}
+	//ToString
+	@Override
+	public String toString() {
+		return "Mercaderies\nnumEixos = " + numEixos + ", alçada = " + alçada + ", tipusMercaderia = " + tipusMercaderia
+				+ ", PBEV = " + PBEV + ", PBOV = " + PBOV + ", PBTV = " + PBTV + ", PBMP = " + PBMP + "\n";
+	}
+	
 
 }
