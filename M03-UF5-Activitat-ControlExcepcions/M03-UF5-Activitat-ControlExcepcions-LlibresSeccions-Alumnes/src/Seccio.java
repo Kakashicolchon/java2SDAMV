@@ -136,7 +136,7 @@ public class Seccio {
 			}
 			else {
 				//Si no és el mateix(ha analitzat tots els ISBNs que hi ha dins el vector), llavors:
-				llibres.remove(pos);
+				llibres.remove(pos-1);
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("--> Arguments no vàlids.");

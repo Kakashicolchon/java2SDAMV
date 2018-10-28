@@ -3,7 +3,6 @@ public class LlibreRepetitException extends Exception {
 	
 	private Llibre llibreErroni;
 	public LlibreRepetitException(String m) {
-		//setLlibreErroni(l);
 		super(m);
 	}
 	public Llibre getLlibreErroni() {
