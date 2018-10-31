@@ -34,11 +34,7 @@ public class Llibre {
 		} catch (IllegalArgumentException e1) {
 			System.out.println("--> Algun dels valors inicials no compleix els requisits.");
 			
-		} /*
-		catch (Exception e2) {
-			System.out.println("Error inesperat");
 		}
-		*/
 	}
 
 

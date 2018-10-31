@@ -19,13 +19,16 @@ public class BibliotecaApp {
 
 		//Printejem els llibres de la seccio en concret "seccioExemple".
 		seccioExemple.printLlibres();
+		System.out.println("");
 
-		//Provem el remove
+		//Provem el remove (Amb un llibre que no existeix)
 		seccioExemple.removeLlibre("978-3-16-148410-2");
-		//Aqui hem intentat treure un llibre amb un ISBN que no existeix.		
+		//Aqui hem intentat treure un llibre amb un ISBN que no existeix.
+		
 		seccioExemple.removeLlibre("978-3-16-148410-0");
 		//Treiem un llibre per comprovar que el mètode segueix funcionant.
 		seccioExemple.printLlibres();
+		
 		//Tornem a imprimir els llibres per veure el resultat
 
 	}

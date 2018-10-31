@@ -25,7 +25,7 @@ public class Seccio {
 			llibres = new Vector<Llibre>();
 		} catch (IllegalArgumentException e) {
 			System.out.println("--> Algun dels valors inicials no compleix els requisits.");
-			
+
 
 		}
 
@@ -89,25 +89,25 @@ public class Seccio {
 	public void addLlibre (Llibre l){
 
 		try {
-			for (int i = 0; i < llibres.size(); i++) {
-				if (l.getIsbn() == llibres.elementAt(i).getIsbn()) {
-					throw new LlibreRepetitException("--> Llibre repetit");
-				}
 
+			if (posicioLlibre(l.getIsbn()) == -1) {
+
+				llibres.add(l);
 			}
-			if (l.equals(null)) {
+
+			else if (l.equals(null)) {
 
 				throw new IllegalArgumentException("--> El valor no pot ser nul");
 			}
 			else {
 				//Si no és el mateix(ha analitzat tots els ISBNs que hi ha dins el vector), llavors:
-				llibres.add(l);
+				throw new LlibreRepetitException("--> Llibre repetit");
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("--> Arguments no vàlids.");
 			System.out.println("");
 		} catch (LlibreRepetitException e) {
-			System.out.println("--> El llibre que ha intentat afegir ja existeix. ISBN duplicat.");
+			System.out.println("--> El llibre que ha intentat afegir ja existeix. ISBN duplicat: " + l.getIsbn() + ".");
 			System.out.println("");
 		}
 
@@ -125,24 +125,23 @@ public class Seccio {
 			int pos;
 			pos = posicioLlibre(i);
 
-			for (pos = 0; pos < llibres.size()-1; pos++) {
-				if (i != llibres.elementAt(pos).getIsbn()) {
-					throw new LlibreInexistentException("--> El llibre que intentes eliminar no existeix");
-				}
+			if (pos == -1) {
+				throw new LlibreInexistentException("--> El llibre que intentes eliminar no existeix");
 			}
-			if (i.equals(null) || i.equals("")) {
+
+			else if (i.equals(null) || i.equals("")) {
 
 				throw new IllegalArgumentException("--> El valor no pot ser nul o cadena buida");
 			}
 			else {
 				//Si no és el mateix(ha analitzat tots els ISBNs que hi ha dins el vector), llavors:
-				llibres.remove(pos-1);
+				llibres.remove(pos);
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("--> Arguments no vàlids.");
 			System.out.println("");
 		} catch (LlibreInexistentException e) {
-			System.out.println("--> El llibre que ha intentat eliminar no existeix. No es troba l'ISBN.");
+			System.out.println("--> El llibre que ha intentat eliminar no existeix. No es troba l'ISBN: " + i + ".");
 			System.out.println("");
 		}
 	}
