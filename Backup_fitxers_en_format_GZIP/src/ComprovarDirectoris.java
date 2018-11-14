@@ -1,3 +1,4 @@
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,7 +11,7 @@ public class ComprovarDirectoris {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean comprobarPathIn (String pathOriginString) {
+	public void comprobarPathIn (String pathOriginString) {
 		boolean i = true;
 		Scanner s = new Scanner(System.in);
 		while (i) {
@@ -36,17 +37,19 @@ public class ComprovarDirectoris {
 			}
 			else {
 				i = false;
-				s.close();
+				//s.close();
 			}
 		}
-		return false;
-		// method body
+
+		
 	}
 	
 	
-	public boolean comprobarPathOut (String pathDestinyString) {
+	public void comprobarPathOut (String pathDestinyString) {
 		boolean i = true;
 		Scanner s = new Scanner(System.in);
+		
+		
 		while (i) {
 
 			Path pathDestiny = Paths.get(pathDestinyString);
@@ -54,8 +57,11 @@ public class ComprovarDirectoris {
 
 			if(!Files.exists(pathDestiny)) {
 				System.out.println("El directori no existeix.");
-				System.out.print("Torna a introduïr el path: ");
-				pathDestinyString = s.nextLine();
+				//Crear directorio
+				File folder = new File(pathDestinyString);
+				folder.mkdir();
+				System.out.println("Creat existosament.");
+				
 			}
 			else if (!Files.isDirectory(pathDestiny)) {
 				System.out.println("El path proporcionat no acaba en un directori");
@@ -63,18 +69,17 @@ public class ComprovarDirectoris {
 				pathDestinyString = s.nextLine();
 				
 			}
-			else if(!Files.isReadable(pathDestiny)) {
-				System.out.println("No te permisos de lectura a aquest directori.");
+			else if(!Files.isWritable(pathDestiny)) {
+				System.out.println("No te permisos d'escriptura en aquest directori.");
 				System.out.print("Torna a introduïr el path: ");
 				pathDestinyString = s.nextLine();
 			}
 			else {
 				i = false;
-				s.close();
+				//s.close();
 			}
 		}
-		return false;
-		// method body
+		
 	}
 
 }
