@@ -11,33 +11,41 @@ import java.util.Scanner;
 import java.util.zip.GZIPOutputStream;
 
 public class GZipCompression {
-	
+	/**
+	 * Constructor sense paràmetres
+	 */
 	public GZipCompression() {
 		super();
 
 	}
-
+	/**
+	 * Mètode que s'encarrega de comprobar que el path donat d'origen existeix, és un directori i té permissos de lectura
+	 * @param pathOriginString és un paràmetre de tipus String que conté el path del directori d'origen.
+	 * @return Retorna el path (amb les correccions adients si s'ha donat el cas).
+	 */
 	public String comprobarPathIn (String pathOriginString) {
 		boolean i = true;
 		boolean a = true;
 		Scanner s = new Scanner(System.in);
 		Path pathOrigin = null;
-
+		//Bucle on comprobem el path i tornem a preguntar en cas de que no estigui bé
 		while (i) {
 			pathOrigin = Paths.get(pathOriginString);
-
+			//Comprobem si existeix
 			if(!Files.exists(pathOrigin)) {
 				System.out.println("El directori no existeix.");
 				System.out.print("Torna a introduïr el path: ");
 				pathOriginString = s.nextLine();
 
 			}
+			//Comprobem si és un directori
 			else if (!Files.isDirectory(pathOrigin)) {
 				System.out.println("El path proporcionat no acaba en un directori");
 				System.out.print("Torna a introduïr el path: ");
 				pathOriginString = s.nextLine();
 
 			}
+			//Comprobem si tenim permissos d'escriptura
 			else if(!Files.isReadable(pathOrigin)) {
 				System.out.println("No te permisos de lectura a aquest directori.");
 				System.out.print("Torna a introduïr el path: ");
@@ -52,7 +60,12 @@ public class GZipCompression {
 
 	}
 
-
+	/**
+	 * Mètode que s'encarrega de comprobar que el path donat de destí existeix, és un directori i té permissos d'escriptura.
+	 * En cas de que no existeixi el crea, en els altres 2 casos torna a preguntar el path a l'usuari
+	 * @param pathDestinyString és un paràmetre de tipus String que conté el path del directori de destí.
+	 * @return Retorna el path (amb les correccions adients si s'ha donat el cas).
+	 */
 	public String comprobarPathOut (String pathDestinyString) {
 		boolean i = true;
 		Scanner s = new Scanner(System.in);
@@ -92,7 +105,12 @@ public class GZipCompression {
 		return pathDestinyString;
 
 	}
-
+	/**
+	 * Mètode que s'encarrega de recorre recursivament el path d'origen i diferenciar entre directoris i altres tipus de fitxer per 
+	 * comprimir-los com diu l'enunciat i crear un arxiu de text que guardi el nom dels directoris que va trobant.
+	 * @param pathOriginString és un paràmetre de tipus String que conté el path del directori d'origen.
+	 * @param pathDestinyString és un paràmetre de tipus String que conté el path del directori de destí.
+	 */
 	public void Compression (String pathOriginString , String pathDestinyString) {
 		//Creem txt per poder guardar el nom dels directoris 
 
@@ -100,11 +118,8 @@ public class GZipCompression {
 		try {
 			Files.walk(Paths.get(pathOriginString)).forEach(ruta-> {
 				if (Files.isRegularFile(ruta)) {
-
-					System.out.println(ruta);
-
+					//System.out.println(ruta);
 					String rutaString = ruta.toString();
-
 
 					try {
 						FileInputStream fis = new FileInputStream(rutaString);
@@ -116,7 +131,7 @@ public class GZipCompression {
 						while((len=fis.read(buffer)) != -1){
 							gzipOS.write(buffer, 0, len);
 						}
-						//close resources
+						//close
 						gzipOS.close();
 						fos.close();
 						fis.close();
@@ -128,6 +143,7 @@ public class GZipCompression {
 				else if (Files.isDirectory(ruta)) {
 					Path pathDestiny = Paths.get(pathDestinyString);
 					Path pathOrigin = Paths.get(pathOriginString);
+					//Crida al mètode escriureFitxers.
 					escriureFitxers(pathDestiny, pathOrigin, ruta);
 				}
 			});
@@ -137,6 +153,12 @@ public class GZipCompression {
 
 
 	}
+	/**
+	 * Mètode que s'encarrega de crear un fitxer .txt on guardarem el nom dels diferents directoris que ens anem trobant.
+	 * @param rutaDestiny és un paràmetre de tipus Path que conté el path del directori de destí.
+	 * @param rutaOrigin és un paràmetre de tipus Path que conté el path del directori d'origen.
+	 * @param ruta és un paràmetre de tipus Path que poseeix la mateixa direcció que rutaOrigen pero amb el directori X seleccionat
+	 */
 	public void escriureFitxers(Path rutaDestiny, Path rutaOrigin, Path ruta) {
 		String rutaDirectoris = rutaDestiny + "/directoris.txt";
 		File archivo = new File(rutaDirectoris);
