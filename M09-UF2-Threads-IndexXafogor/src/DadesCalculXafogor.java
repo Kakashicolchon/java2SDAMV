@@ -11,7 +11,7 @@ import java.util.Random;
 public class DadesCalculXafogor {
 	
 	private static final int NUM_MOSTRES = 525960;
-	private static final int NUM_ESTACIONS = 10;
+	public static final int NUM_ESTACIONS = 10;
 	
 	public double[][] temperatures;
 	public double[][] humitats;
