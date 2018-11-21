@@ -18,10 +18,9 @@ public class ThreadCalculXafogor implements Runnable {
 
 	@Override
 	public void run() {
-		dades = new DadesCalculXafogor();
 
 		for (int j = 0; j < dades.humitats.length; j++) {
-			calcularIndexXafogor(dades.temperatures[fila][j], dades.humitats[fila][j]);
+			dades.indexsXafogor[fila][j]=calcularIndexXafogor(dades.temperatures[fila][j], dades.humitats[fila][j]);
 		}
 
 
