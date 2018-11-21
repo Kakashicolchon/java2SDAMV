@@ -2,12 +2,11 @@ public class ThreadCalculXafogor implements Runnable {
 
 	DadesCalculXafogor dades;
 	int fila;
-	int columna;
 
-	public ThreadCalculXafogor(DadesCalculXafogor d, int f, int c) {
+
+	public ThreadCalculXafogor(DadesCalculXafogor d, int f) {
 		dades = d;
 		fila = f;
-		columna = c;
 	}
 
 	public Double calcularIndexXafogor(Double t, Double h) {
@@ -22,7 +21,7 @@ public class ThreadCalculXafogor implements Runnable {
 		dades = new DadesCalculXafogor();
 
 		for (int j = 0; j < dades.humitats.length; j++) {
-			calcularIndexXafogor(dades.temperatures[fila][columna], dades.humitats[fila][columna]);
+			calcularIndexXafogor(dades.temperatures[fila][j], dades.humitats[fila][j]);
 		}
 
 
