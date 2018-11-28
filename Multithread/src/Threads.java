@@ -2,7 +2,7 @@
 public class Threads {
 
 	public static void main(String[] args) {
-		Thread th;
+		/*Thread th;
 		MostraMissatge mm;
 		
 		mm = new MostraMissatge();
@@ -17,8 +17,10 @@ public class Threads {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}*/
+		for (int i = 1; i < 500000 ; i++) {
+			System.out.println(i);
 		}
-
 	}
 
 }
