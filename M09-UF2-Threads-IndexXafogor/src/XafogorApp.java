@@ -2,7 +2,7 @@
 public class XafogorApp{
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		ThreadCalculXafogor[] threadICX = new ThreadCalculXafogor[DadesCalculXafogor.NUM_ESTACIONS];
 		Thread[] thx = new Thread[DadesCalculXafogor.NUM_ESTACIONS];
 		ThreadCalculSuperiors40[] threadEstacions = new ThreadCalculSuperiors40[DadesCalculXafogor.NUM_ESTACIONS];
@@ -20,38 +20,20 @@ public class XafogorApp{
 			threadEstacions[i] = new ThreadCalculSuperiors40(dcx, i);
 			thS40[i] = new Thread(threadEstacions[i]);
 			thS40[i].start();
-			
-		}
-		
+			thS40[i].join();
 
-		
+		}
+
+
+
 		for (int i = 0; i < DadesCalculXafogor.NUM_ESTACIONS; i++) {
 			System.out.println(dcx.quantsPerEstacio[i]);
+			System.out.println("nº estacions > 40 = " + dcx.quantsPerMinut[i]);
 			//for (int j = 0; j < dcx.humitats.length; j++) {
-				//System.out.println(dcx.indexsXafogor[i][j]);
-				
+			//System.out.println(dcx.indexsXafogor[i][j]);
+
 			//}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*for (int i = 0; i < threadICX.length; i++) {
-			for (int j = 0; j < threadICX.length; j++) {
-				if (dcx.indexsXafogor[i][j] > 40) {
-					ix40++;
-				}
-			}
-		}*/
-		
-
-
 	}
 
 }
