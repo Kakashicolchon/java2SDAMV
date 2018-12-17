@@ -49,7 +49,6 @@ public class Televisio implements Comparable<Televisio> {
 	 * @return retorna un boleà "resultat
 	 */
 	@Override
-	
 	public boolean equals(Object el) {
 		boolean resultat = false;
 		
@@ -79,6 +78,6 @@ public class Televisio implements Comparable<Televisio> {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "|Televisio pulgadas: " + getNumPulgadas() + " MARCA: " + getMarca();
+		return "|Televisio: polzades: " + getNumPulgadas() + ", MARCA: " + getMarca();
 	}
 }

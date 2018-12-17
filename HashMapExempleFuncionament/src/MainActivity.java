@@ -24,8 +24,7 @@ public class MainActivity {
 		Televisio tv5 = new Televisio(100, "Ester Riotipo");
 
 		/* Afegim elements */
-		//add
-		hmap.put(null, null);
+		hmap.put(null, null); //No es veurà
 		hmap.put(null, tv1);
 		hmap.put(2, null);
 		hmap.put(7, tv3);
@@ -56,7 +55,7 @@ public class MainActivity {
 
 
 		System.out.println("\n--------------------COMPROBACIONS--------------------\n");
-		/* -----Comprobacions d'agafa i eliminar un valor--------- */
+		/* -----Comprobacions d'agafar i eliminar un valor--------- */
 		/* Agafem valors basats en la Key*/
 		Televisio value = hmap.get(2);
 		System.out.println("El valor de la key 2 és: " + value + "\n");
